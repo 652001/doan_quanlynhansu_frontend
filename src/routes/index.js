@@ -3,7 +3,7 @@ import DanhSachNhanVien from '~/page/DanhSach/DanhSachNhanVien';
 import DanhSachChamCong from '~/page/DanhSach/DanhSachChamCong';
 import DanhSachHopDong from '~/page/DanhSach/DanhSachHopDong';
 import DanhSachTaiKhoan from '~/page/DanhSach/DanhSachTaiKhoan';
-import DanhSachPhongBan from '~/page/QuanLyPhongBan/DanhSachPhongBan';
+import DanhSachPhongBan from '~/page/DanhSach/DanhSachPhongBan';
 import ThietLap from '~/page/HeThong/ThietLap';
 import CaiDatGioCong from '~/page/HeThong/CaiDatGioCong';
 
