@@ -23,8 +23,12 @@ const listTitles = {
     id: 'Mã nhân viên',
     name: 'Tên nhân viên',
     username: 'Tên đăng nhập',
+    trangthai: 'Trạng thái',
     img: 'Hình ảnh',
-    rolos: 'Phân quyền',
+    rolos: 'Quyền hạn',
+    truycap: 'Truy cập',
+    email: 'Email',
+    sdt: 'Số điện thoại'
 };
 
 function DanhSachTaiKhoan() {

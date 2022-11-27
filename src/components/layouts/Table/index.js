@@ -11,8 +11,8 @@ function Table({ title, listTitles, listdata, hideButton }) {
     const [smShow, setSmShow] = useState(false);
     const [modalShow, setModalShow] = useState(false);
     const [page, setPage] = useState(1);
-    const [id, setID] = useState();
-    const [user, setUser] = useState({})
+    //const [id, setID] = useState();
+    //const [user, setUser] = useState({})
 
     const [data] = useState([...listdata])
 
@@ -37,22 +37,22 @@ function Table({ title, listTitles, listdata, hideButton }) {
                 <div className="card-body">
                     <h3 className="h3">{title}</h3>
                         <div className='d-flex flex-row-reverse bd-highlight'>
-                            <div className='col-md-2'>
+                            <div className={`'col-md-2 m-2 collapse' ${hideButton? '' : 'collapse'}`}>
                                 <Button
                                     type="button"
                                     variant="danger"
-                                    className={`'btn-icon-text' + ${hideButton? '' : 'collapse'}`}
+                                    className='btn-icon-text'
                                     onClick={() => handleView()}
                                 >
                                     Xem thông tin
                                     <i className="ti-file btn-icon-prepend ms-1" />
                                 </Button>
                             </div>
-                            <div className='col-md-1'>
+                            <div className={`'col-md-1 m-2 collapse' ${rdoFocus? '' : 'collapse'}`} >
                                 <Button
                                     type="button"
                                     variant="info"
-                                    className={`'btn-icon-text' + ${rdoFocus? '' : 'collapse'}`}
+                                    className='btn-icon-text'
                                     onClick={() => handleDel()}
                                 >
                                     Xóa
@@ -77,6 +77,7 @@ function Table({ title, listTitles, listdata, hideButton }) {
                             <thead>
                                 <tr>
                                     <th></th>
+                                    <th className='text-center'>STT</th>
                                     {listTitles.img ? <th className='text-center'>{listTitles.img}</th> : null}
                                     {titles.map((key) => {
                                         return key !== 'img' ? (
@@ -88,7 +89,7 @@ function Table({ title, listTitles, listdata, hideButton }) {
                                 </tr>
                             </thead>
                             <tbody>
-                                {slice.map((data) => {
+                                {slice.map((data, index) => {
                                     let keys = Object.keys(data);
                                     return (
                                         <tr key={data.id} onClick={() => setRdoFocus(data.id)} className={data.id? '' : 'collapse'}>
@@ -101,6 +102,7 @@ function Table({ title, listTitles, listdata, hideButton }) {
                                                     onChange={() => setRdoFocus(data.id)}
                                                 />
                                             </td>
+                                            <td className='text-center'>{index + 1}</td>
                                             {data.img ? (
                                                 <td className="text-center">
                                                     <Image src={data.img} />

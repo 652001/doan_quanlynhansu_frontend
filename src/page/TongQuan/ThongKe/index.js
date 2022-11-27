@@ -1,6 +1,6 @@
 import React from 'react';
 
-function HomePage() {
+function ThongKe() {
     return (
         <section className="content-wrapper">
             <div className="row">
@@ -110,4 +110,4 @@ function HomePage() {
     );
 }
 
-export default HomePage;
+export default ThongKe;
